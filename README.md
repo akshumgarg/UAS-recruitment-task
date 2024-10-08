@@ -27,17 +27,18 @@ https://opencv.org/
 # DAY 6 (07/10/2024)
 Now, I started making the program.  
 
-First, I needed to calculate the houses in burnt area and green area separately. So, I thought that I should make the masks of both the areas. By this, I could get the triangles in brown and green area (white and black in mask). Then I calculated the number of triangles in both the masks as done in code.  
+First, I needed to calculate the houses in burnt area and unburnt area separately. So, I thought that I should make the masks of both the areas. By this, I could get the triangles in brown and green area (white and black in mask). Then I calculated the number of triangles in both the masks as done in code.  
 My first plan was that I would calculate the number of contours which have 3 sides. But in the contours, triangles were not completely formed. In each triangle, two line were connected to each other and third one was separate.  
 After many trials, I used another method. I calculated the area of contours and found the area of triangles from there. Since area of each triangle was same, I calculated the number of triangles which had that range of area.  
 I made a function which could calculate the number of triangles in any mask/image. This was used a lot later.  
 I have explained my code in the program itself, so that there will be no issue to the reader to read my code.  
-Now, I had to find the number of red and blue houses in both burnt and green area to find priority. To do so, I made a separate mask of red triangles and added it to the mask of burnt area. This gave me the sum of blue burnt houses and red green houses. And by solving equations on paper, I got all the required values.  
-Today, I made the code which could tell the number of burnt houses, green houses, priority of only one image at a time.  
+Now, I had to find the number of red and blue houses in both burnt and burnt area to find priority. To do so, I made a separate mask of red triangles and added it to the mask of burnt area. This gave me the sum of blue burnt houses and redunburnt houses. And by solving equations on paper, I got all the required values.  
+Today, I made the code which could tell the number of burnt houses, unburnt houses, priority of only one image at a time.  
 I don't know why but one house in burnt area was not being counted in the contours. I couldn't solve this on time.
 
 # DAY 7 (08/10/2024)
 Now, I had to make this program applicable to all the images at the same time and to change green and brown color to different unique colors.  
 I made the main part a function and kept cv2.imread part out of the function. This function returned all the required values which were later stored in different variables (can be seen in code). Then I made all the required lists and sorted them according to function. At last, to make order of images in last list, image2 and image11 had same priority, so only one image is shown in the list. I couldn't solve this issue on time.  
 
-To change the brown and green colors to other colors, I used simple code (can be seen in code line 72,73)
+To change the brown and green colors to other colors, I used simple code (can be seen in code line 72,73)  
+When I tried to add and commit changes, some error was shown in the terminal. So, I made a new repository and copied all the code into it.
